@@ -1,0 +1,76 @@
+✅ Upload a Local Folder to GitHub Using VS Code
+
+=============================================================
+
+1️⃣ Open your project in VS Code
+
+Open VS Code
+Click File → Open Folder
+Select your project folder
+
+=============================================================
+
+2️⃣ Initialize Git in the folder
+Option A: Using Source Control (GUI)
+Click the Source Control icon (left sidebar).
+Click “Initialize Repository”.
+
+✅Option B: Using Terminal
+git init
+
+=============================================================
+
+3️⃣ Add files to Git
+GUI:
+Click the + icon near each file
+OR click “+” next to “Changes” to stage all
+
+✅Terminal:
+git add .
+
+=============================================================
+
+4️⃣ Commit your files
+GUI:
+Type a message in the text box (example: "Initial commit")
+Click ✔ Commit
+
+✅Terminal:
+git commit -m "Initial commit"
+
+=============================================================
+
+5️⃣ Create a new GitHub repo
+
+Go to: https://github.com/new
+Enter repo name
+Do NOT add README or .gitignore (optional but avoids conflicts)
+Click Create Repository
+
+=============================================================
+
+6️⃣ Connect your VS Code project to GitHub repository
+
+Copy the commands GitHub shows (replace with your repo URL):
+
+✅Terminal:
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
+git branch -M main
+git push -u origin main
+
+=============================================================
+
+7️⃣ Verify upload
+Refresh your GitHub repo page—you should see all your files uploaded.
+
+=============================================================
+⭐ DONE!
+
+Your local project is now linked to GitHub.
+Going forward, just do:
+
+✅Terminal:
+git add .
+git commit -m "update"
+git push
+=============================================================
