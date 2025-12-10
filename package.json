@@ -1,0 +1,28 @@
+{
+  "name": "demo-formidable",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/node": "^24.10.1",
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "formidable": "^3.5.4",
+    "fs": "^0.0.1-security",
+    "nodemon": "^3.1.11",
+    "path": "^0.12.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/formidable": "^3.4.6"
+  }
+}

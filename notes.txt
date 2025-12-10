@@ -1,0 +1,5 @@
+mkdir formidable-express-ts
+cd formidable-express-ts
+npm init -y
+npm install express formidable @types/express @types/formidable @types/node typescript ts-node
+npx tsc --init
