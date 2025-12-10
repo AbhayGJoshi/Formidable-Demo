@@ -2,6 +2,7 @@ import { Router, Request, Response } from "express";
 import { Formidable } from "formidable";
 import { prepareDir, fname } from "../utils/utilityFunctions";
 import path from "path";
+
 const formidRouter = Router();
 
 formidRouter.get("/", async (req: Request, res: Response) => {
@@ -71,14 +72,30 @@ formidRouter.post("/", async (req: Request, res: Response) => {
 
     form.parse(req, (err, fields, files) => {
       if (err) {
-        console.error("Error occured during file upload:", err);
+        console.error("Upload Error:", err.message);
         return res.status(400).json({ error: err.message });
       }
-      res.status(200).json({
-        message: "Files uploaded successfully",
-        count: fileCount,
-        files,
-      });
+      const isFileAttached = Object.keys(files).length > 0;
+      const isDataAttached =
+        Array.isArray(fields.data) &&
+        Object.keys(JSON.parse(fields.data[0].toString())).length > 0;
+
+      console.log("file attached:", isFileAttached);
+      console.log("data attached:", isDataAttached);
+
+      if (isFileAttached) {
+        res.status(200).json({
+          message: "Data uploaded.",
+          count: fileCount,
+          files,
+        });
+      } else {
+        res.status(200).json({
+          message: "Data uploaded.",
+          count: fileCount,
+          files,
+        });
+      }
     });
   } catch (error) {
     console.error("Error occured:", error);
